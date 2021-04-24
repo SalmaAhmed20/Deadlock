@@ -1,10 +1,10 @@
 public class Bank {
     //number of resource types (input)
-    private int numResourceType;
+    private final int numResourceType;
     // each cell is resource type contain amount of available of it (input)
     private int[] available;
     // number of processes (input)
-    private int numProcess;
+    private final int numProcess;
     // is the maximum amount of resources that process can use (input)
     private int[][] maximum;
     //the amount currently allocated to each process (input)
@@ -43,14 +43,9 @@ public class Bank {
 
     public void Algorithm ( ) {
         boolean[] Finish = new boolean[ numProcess ];
-        for ( int i = 0 ; i < Finish.length ; i++ ) {
-            Finish[ i ] = false;
-        }
         int[] work = new int[ numResourceType ];
-        for ( int i = 0 ; i < work.length ; i++ ) {
-            work[ i ] = available[ i ];
-        }
-        int safeSequence[] = new int[ numProcess ];
+        System.arraycopy ( available , 0 , work , 0 , work.length );
+        int[] safeSequence = new int[ numProcess ];
         int currentseq = 0;
 
         System.out.print ( "Processes \t" );

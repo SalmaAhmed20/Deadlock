@@ -6,9 +6,9 @@ public class Processor {
     public static void main( String[] args ) {
         //test Program
         int nR=3 , nP=5;
-        int available [] = {3,3,2};
-        int Max [][] ={{7,5,3}, {3,2,2}, {9,0,2}, {2,2,2}, {4,3,3}};
-        int Alloc [][]={{0,1,0},{2,0,0},{3,0,2},{2,1,1},{0,0,2}};
+        int[] available = {3,3,2};
+        int[][] Max ={{7,5,3}, {3,2,2}, {9,0,2}, {2,2,2}, {4,3,3}};
+        int[][] Alloc ={{0,1,0},{2,0,0},{3,0,2},{2,1,1},{0,0,2}};
         Bank Banker = new Bank(nR,nP,Alloc,Max);
         Banker.setAvailable(available);
         Banker.Algorithm();
