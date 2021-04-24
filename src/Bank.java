@@ -41,7 +41,7 @@ public class Bank {
         this.available = available;
     }
 
-    public void Algorithm ( ) {
+    public boolean Algorithm ( ) {
         boolean[] Finish = new boolean[ numProcess ];
         int[] work = new int[ numResourceType ];
         System.arraycopy ( available , 0 , work , 0 , work.length );
@@ -125,12 +125,33 @@ public class Bank {
         }
         if ( currentseq < numProcess ) {
             System.out.println ( "unSafe" );
+            return false;
+
         } else {
             System.out.println ( "safe Sequence" );
             for ( int i = 0 ; i < numProcess ; i++ ) {
                 System.out.print ( "P" + safeSequence[ i ] );
                 if ( i != numProcess - 1 )
                     System.out.print ( " -> " );
+            }
+            return true;
+        }
+    }
+    void Request (int processnum , int [] request)
+    {
+        for ( int i = 0 ; i < numResourceType ; i++ ) {
+            if(request [i] > need[processnum][i])
+            {
+                System.out.println ("Request is greater than needed Resources");
+                return;
+            }
+
+        }
+        for ( int i = 0 ; i < numResourceType ; i++ ) {
+            if (request[i] > available[i])
+            {
+                System.out.println ("Request is greater than available Resources");
+                return;
             }
         }
     }
