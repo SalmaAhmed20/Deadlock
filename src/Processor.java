@@ -13,7 +13,7 @@ public class Processor {
         Banker.setAvailable(available);
         Banker.Algorithm();
         //****
-        //** request algorithm
+        //** request and release algorithm
         int option ;
         Scanner sc = new Scanner(System.in);
         do {
