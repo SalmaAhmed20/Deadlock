@@ -25,6 +25,16 @@ public class Processor {
             {
                 case 1://
                 {
+                    int[] request=new int[3];
+                    int numPro;
+                    System.out.println("Enter process number:- ");
+                    numPro=sc.nextInt();
+                    System.out.println("Enter the request:- ");
+                    for(int i=0;i<3;i++)
+                    {
+                        request[i]=sc.nextInt();
+                    }
+                    Banker.Request(numPro,request);
                     break;
                 }
                 case 2://

@@ -155,8 +155,18 @@ public class Bank {
             }
         }
         for ( int i = 0 ; i < numResourceType ; i++ ) {
-
-
+            allocation[processnum][ i ]+=request[i];
+            need[processnum][ i ]=maximum[processnum][ i ]-allocation[processnum][ i ];
+            available[i]-=request[i];
         }
+        boolean check=Algorithm();
+       /** if(check)
+        {
+            System.out.println ( "safe Sequence" );
+        }
+        else
+        {
+            System.out.println ( "unSafe" );
+        }**/
     }
 }
