@@ -160,13 +160,14 @@ public class Bank {
             available[i]-=request[i];
         }
         boolean check=Algorithm();
-       /** if(check)
-        {
-            System.out.println ( "safe Sequence" );
+        if(!check) {
+            //to release request
+            for (int i = 0; i < numResourceType; i++) {
+                allocation[processnum][i] -= request[i];
+                need[processnum][i] = maximum[processnum][i] - allocation[processnum][i];
+                available[i] += request[i];
+            }
         }
-        else
-        {
-            System.out.println ( "unSafe" );
-        }**/
+
     }
 }
