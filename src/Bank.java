@@ -170,4 +170,22 @@ public class Bank {
         }
 
     }
+    public void Release(int processnum , int [] release) {
+        boolean check=false;
+        for ( int i = 0 ; i < numResourceType ; i++ ) {
+            if(release [i] > allocation[processnum][i])
+            {
+                System.out.println ("release resources are greater than allocated resources ");
+                check=true;
+                return;
+            }
+
+        }
+        if(!check) {
+            for ( int i = 0 ; i < numResourceType ; i++ )
+                allocation[ processnum ][ i ] = allocation[ processnum ][ i ] - release[ i ];}
+        //this for to check allocation of resources---remove it
+        for ( int i = 0 ; i < numResourceType ; i++ )
+            System.out.print(allocation[processnum][i]+" ");
+    }
 }

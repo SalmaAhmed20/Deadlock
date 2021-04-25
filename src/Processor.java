@@ -25,12 +25,12 @@ public class Processor {
             {
                 case 1://
                 {
-                    int[] request=new int[3];
+                    int[] request=new int[nR];
                     int numPro;
                     System.out.println("Enter process number:- ");
                     numPro=sc.nextInt();
                     System.out.println("Enter the request:- ");
-                    for(int i=0;i<3;i++)
+                    for(int i=0;i<nR;i++)
                     {
                         request[i]=sc.nextInt();
                     }
@@ -39,6 +39,16 @@ public class Processor {
                 }
                 case 2://
                 {
+                    int num;
+                    int[] RL;
+                    RL= new int [nR];
+                    System.out.print("Number of process: ");
+                    num=sc.nextInt();
+                    System.out.print("Enter the release resources : ");
+                    for(int i=0;i<nR;i++)
+                        RL[i]=sc.nextInt();
+                    Banker.Release(num,RL);
+
                     break;
                 }
                 case 3:
